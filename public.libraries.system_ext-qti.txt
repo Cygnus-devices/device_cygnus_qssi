@@ -5,3 +5,6 @@ libthermalclient.qti.so
 libQOC.qti.so
 libsxrservice_client.qti.so
 libdiag_system.qti.so
+libxrvd.qti.so
+liblistenjni.qti.so
+liblistensoundmodel2.qti.so
