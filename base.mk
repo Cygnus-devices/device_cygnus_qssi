@@ -943,16 +943,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
     ro.adb.secure=1
 endif
 
-# OEM Unlock reporting
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=1
-
-
 # VNDK-SP:
 PRODUCT_PACKAGES += \
-    vndk-sp \
+    vndk-sp
 
-TARGET_FS_CONFIG_GEN := device/qcom/qssi/config.fs
+TARGET_FS_CONFIG_GEN := device/cygnus/qssi/config.fs
 
 ifeq ($(TARGET_HAS_LOW_RAM),true)
     PRODUCT_PROPERTY_OVERRIDES += \
@@ -975,7 +970,7 @@ PRODUCT_PACKAGES_DEBUG += \
     init.qti.debug-lito.sh \
     init.qti.debug-atoll.sh \
     init.qti.debug-trinket.sh \
-    init.qti.debug-bengal.sh \
+    init.qti.debug-bengal.sh
 
 PRODUCT_PACKAGES += liboemaids_system
 PRODUCT_PACKAGES += liboemaids_vendor

@@ -1,4 +1,4 @@
-$(call inherit-product, device/qcom/qssi/base.mk)
+$(call inherit-product, device/cygnus/qssi/base.mk)
 
 # For PRODUCT_COPY_FILES, the first instance takes precedence.
 # Since we want use QC specific files, we should inherit
@@ -24,12 +24,12 @@ endif
 
 # whitelisted app
 PRODUCT_COPY_FILES += \
-    device/qcom/qssi/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
-    device/qcom/qssi/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml
+    device/cygnus/qssi/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
+    device/cygnus/qssi/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml
 
 PRODUCT_COPY_FILES += \
-    device/qcom/qssi/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
-    device/qcom/qssi/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti-system-ext.xml
+    device/cygnus/qssi/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
+    device/cygnus/qssi/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti-system-ext.xml
 
 PRODUCT_PRIVATE_KEY := vendor/qcom/opensource/core-utils/build/qcom.key
 

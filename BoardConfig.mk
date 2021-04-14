@@ -23,8 +23,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_HW_DISK_ENCRYPTION_PERF := true
 
-BOARD_SECCOMP_POLICY := device/qcom/$(TARGET_BOARD_PLATFORM)/seccomp
-
 BOARD_SYSTEMSDK_VERSIONS:= $(SHIPPING_API_LEVEL)
 
 TARGET_NO_BOOTLOADER := true
@@ -33,8 +31,6 @@ TARGET_NO_KERNEL := true
 
 # Disable DLKMs compilation for lunch qssi builds.
 TARGET_KERNEL_DLKM_DISABLE := true
-
--include $(QCPATH)/common/msmnile/BoardConfigVendor.mk
 
 USE_OPENGL_RENDERER := true
 BOARD_USE_LEGACY_UI := true
@@ -62,8 +58,7 @@ endif
 BOARD_USES_METADATA_PARTITION := true
 
 #Enable split vendor image
-ENABLE_VENDOR_IMAGE := true
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+ENABLE_VENDOR_IMAGE := false
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
@@ -79,7 +74,6 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_NO_RPC := true
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_INIT_VENDOR_LIB := libinit_msm
 
 #Disable appended dtb.
 TARGET_KERNEL_APPEND_DTB := false
@@ -115,10 +109,6 @@ TARGET_USES_INTERACTION_BOOST := true
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
 
-ifeq ($(ENABLE_VENDOR_IMAGE), false)
-    $(error "Vendor Image is mandatory !!")
-endif
-
 BUILD_BROKEN_DUP_RULES := true
 
 # KEYSTONE(I1056bb73cc2f8796ed941b5dd7b333ef15c60891,b/147756744)
@@ -131,7 +121,7 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_USES_BUILD_HOST_STATIC_LIBRARY := true
 
 #Enable VNDK Compliance
-BOARD_VNDK_VERSION:=current
+BOARD_VNDK_VERSION:= current
 Q_BU_DISABLE_MODULE := true
 
 ###### Dynamic Partition Handling ####
