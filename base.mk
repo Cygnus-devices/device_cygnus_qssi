@@ -916,8 +916,8 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.verified_boot.
 ifneq ($(strip $(TARGET_USES_RRO)),true)
 # enable overlays to use our version of
 # source/resources etc.
-DEVICE_PACKAGE_OVERLAYS += device/qcom/common/device/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/qcom/common/product/overlay
+DEVICE_PACKAGE_OVERLAYS += device/cygnus/qssi/device/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/cygnus/qssi/product/overlay
 endif
 
 # include additional build utilities
