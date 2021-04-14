@@ -72,9 +72,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/av \
     hardware/google/interfaces
 
-VENDOR_QTI_PLATFORM := msmnile
-VENDOR_QTI_DEVICE := qssi
-
 #QSSI configuration
 #Single system image project structure
 TARGET_USES_QSSI := true
@@ -94,11 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES  += \
 	dalvik.vm.heapminfree=512k \
 	dalvik.vm.heapmaxfree=8m
 
-
-PRODUCT_NAME := $(VENDOR_QTI_DEVICE)
-PRODUCT_DEVICE := $(VENDOR_QTI_DEVICE)
-PRODUCT_BRAND := qti
-PRODUCT_MODEL := qssi system image for arm64
 
 #Initial bringup flags
 TARGET_USES_AOSP := false
